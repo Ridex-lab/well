@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Natural Feminine Routine | A Personal Wellness Guide</title>
+    <!-- Google Fonts: Playfair Display for Serifs, Inter for Sans-Serif -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-cream: #FCF9F5;
+            --accent-rose: #E5B5B5;
+            --accent-peach: #F4D7C5;
+            --text-main: #4A3E3E;
+            --text-light: #7A6F6F;
+            --white: #FFFFFF;
+            --shadow: 0 10px 30px rgba(74, 62, 62, 0.05);
+            --transition: all 0.4s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-cream);
+            color: var(--text-main);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        p { font-size: 1.05rem; font-weight: 300; }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--text-main);
+            color: var(--bg-cream);
+            padding: 1.2rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: var(--transition);
+            border: 1px solid var(--text-main);
+            box-shadow: var(--shadow);
+        }
+
+        .btn:hover {
+            background-color: transparent;
+            color: var(--text-main);
+            transform: translateY(-2px);
+        }
+
+        .trust-text {
+            display: block;
+            margin-top: 1rem;
+            font-size: 0.85rem;
+            color: var(--text-light);
+            letter-spacing: 0.5px;
+        }
+
+        section { padding: 100px 0; }
+
+        /* 1. HERO SECTION */
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(180deg, #F9F3EE 0%, var(--bg-cream) 100%);
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: clamp(2.5rem, 5vw, 3.8rem);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+            color: var(--text-light);
+            max-width: 500px;
+        }
+
+        .hero-image-container {
+            position: relative;
+            text-align: center;
+        }
+
+        .profile-img {
+            width: 100%;
+            max-width: 400px;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 200px 200px 20px 20px;
+            box-shadow: var(--shadow);
+            background-color: var(--accent-peach); /* Placeholder color */
+        }
+
+        /* 2. STORY SECTION */
+        .story { background-color: var(--white); }
+        
+        .story-grid {
+            display: grid;
+            grid-template-columns: 0.6fr 1.4fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .story-content { max-width: 650px; }
+        
+        .story-content h2 { margin-bottom: 2rem; font-size: 2.2rem; }
+        
+        .story-content p { margin-bottom: 1.5rem; }
+
+        .side-note {
+            display: inline-block;
+            margin-top: 2rem;
+            padding-left: 1.5rem;
+            border-left: 2px solid var(--accent-rose);
+            font-style: italic;
+            color: var(--text-light);
+        }
+
+        .story-img-small {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+        }
+
+        /* 3. EBOOK PREVIEW SECTION */
+        .preview { background-color: var(--bg-cream); text-align: center; }
+        
+        .preview-title { margin-bottom: 3rem; }
+        .preview-title h2 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+        .preview-title span { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 2px; color: var(--text-light); }
+
+        /* Phone Mockup */
+        .phone-container {
+            position: relative;
+            width: 320px;
+            height: 650px;
+            margin: 0 auto 3rem auto;
+            background: #1a1a1a;
+            border-radius: 40px;
+            padding: 12px;
+            box-shadow: 0 50px 100px -20px rgba(0,0,0,0.15), 0 30px 60px -30px rgba(0,0,0,0.2);
+            border: 4px solid #333;
+        }
+
+        .phone-screen {
+            width: 100%;
+            height: 100%;
+            background: #fff;
+            border-radius: 30px;
+            overflow-y: scroll;
+            overflow-x: hidden;
+            position: relative;
+            scrollbar-width: none; /* Hide for Firefox */
+        }
+
+        .phone-screen::-webkit-scrollbar { display: none; } /* Hide for Chrome/Safari */
+
+        /* Ebook Styles inside phone */
+        .ebook-page {
+            padding: 40px 25px;
+            background-color: #FFFEFC;
+            min-height: 100%;
+            text-align: left;
+        }
+
+        .ebook-cover {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-color: var(--bg-cream);
+        }
+
+        .ebook-cover h4 { font-family: 'Playfair Display', serif; font-size: 1.8rem; margin-bottom: 1rem; }
+        .ebook-tag { font-size: 0.7rem; text-transform: uppercase; color: var(--text-light); border-bottom: 1px solid var(--accent-rose); margin-bottom: 1rem; }
+
+        .ebook-toc h5 { font-family: 'Playfair Display', serif; margin-bottom: 1rem; border-bottom: 1px solid #eee; padding-bottom: 5px; }
+        .ebook-toc ul { list-style: none; font-size: 0.85rem; }
+        .ebook-toc li { margin-bottom: 8px; color: var(--text-light); display: flex; justify-content: space-between; }
+
+        .ebook-chapter h5 { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--text-main); margin-bottom: 0.5rem; }
+        .ebook-chapter h6 { font-size: 0.9rem; font-weight: 400; font-style: italic; color: var(--text-light); margin-bottom: 1.5rem; }
+        .ebook-chapter p { font-size: 0.85rem; margin-bottom: 1rem; color: #555; }
+        .ebook-chapter ul { font-size: 0.85rem; padding-left: 1rem; margin-bottom: 1rem; }
+
+        .fade-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(0deg, var(--bg-cream) 20%, transparent 100%);
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding-bottom: 30px;
+            pointer-events: none;
+        }
+
+        .fade-text { font-size: 1rem; font-weight: 500; font-family: 'Playfair Display', serif; }
+
+        /* 4. WHAT'S INSIDE SECTION */
+        .inside { background-color: var(--white); }
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .card {
+            background: var(--bg-cream);
+            padding: 2.5rem;
+            border-radius: 20px;
+            transition: var(--transition);
+            border: 1px solid transparent;
+        }
+
+        .card:hover { border-color: var(--accent-rose); transform: translateY(-5px); }
+        
+        .card-icon { color: var(--accent-rose); font-size: 1.5rem; margin-bottom: 1rem; display: block; }
+        
+        .card p { font-size: 0.95rem; font-weight: 400; }
+
+        /* 5. TRUST SECTION */
+        .trust { text-align: center; }
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .trust-block h4 { font-size: 1.2rem; margin-bottom: 1rem; color: var(--text-main); }
+        .trust-block p { font-size: 0.9rem; color: var(--text-light); }
+
+        /* 6. FINAL CTA */
+        .cta-final {
+            background-color: var(--accent-peach);
+            text-align: center;
+            padding: 120px 0;
+        }
+
+        .cta-final h2 { font-size: 3rem; margin-bottom: 1.5rem; }
+        .cta-final p { max-width: 600px; margin: 0 auto 2.5rem auto; font-size: 1.1rem; }
+
+        /* Arrow styling */
+        .preview-arrow {
+            position: absolute;
+            right: -100px;
+            top: 20%;
+            transform: rotate(15deg);
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+        }
+
+        @media (max-width: 992px) {
+            .hero-grid, .story-grid { grid-template-columns: 1fr; text-align: center; }
+            .hero-content p, .story-content { margin-left: auto; margin-right: auto; }
+            .hero-image-container { order: -1; }
+            .trust-grid { grid-template-columns: 1fr; }
+            .preview-arrow { display: none; }
+        }
+
+        /* Subtle Fade In Animation */
+        [data-reveal] {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s ease-out;
+        }
+
+        .revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content" data-reveal>
+                    <h1>The Natural Feminine Routine That Finally Worked for Me</h1>
+                    <p>A practical feminine wellness guide combining traditional African remedies, modern feminine care, and the natural habits that helped me find lasting relief — and can help you too.</p>
+                    <a href="#purchase" class="btn">Get Instant Access</a>
+                    <span class="trust-text">Simple wellness practices • Feminine self-care • Personal experience</span>
+                </div>
+                <div class="hero-image-container" data-reveal>
+                    <!-- Note: Replace src with actual image of an African woman as described -->
+                    <img src="https://images.unsplash.com/photo-1523824921871-d6f1a15151f1?auto=format&fit=crop&q=80&w=800" alt="Author Profile" class="profile-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STORY SECTION -->
+    <section class="story">
+        <div class="container">
+            <div class="story-grid">
+                <div data-reveal>
+                    <img src="https://images.unsplash.com/photo-1590004953392-5aba2e78319b?auto=format&fit=crop&q=80&w=600" alt="Personal Journey" class="story-img-small">
+                </div>
+                <div class="story-content" data-reveal>
+                    <h2>Why I Created This Guide</h2>
+                    <p>For years, I struggled with recurring feminine discomfort that kept coming back no matter what I tried. Sometimes the symptoms would disappear for a while, only to return again weeks later. It became frustrating, exhausting, and honestly embarrassing to keep dealing with.</p>
+                    <p>I started paying closer attention to my body, daily habits, stress levels, diet, hygiene products, and even some of the traditional wellness practices older African women around me quietly recommended.</p>
+                    <p>At first, I didn’t take some of those methods seriously. But after combining natural wellness habits, feminine care routines, better nutrition, and more intentional self-care, I slowly began noticing real changes.</p>
+                    <p>I documented everything that genuinely helped me — the routines, foods, and natural practices that made the biggest difference. That personal journey eventually became this guide.</p>
+                    <span class="side-note">Combining traditional African wellness wisdom with modern feminine care practices.</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EBOOK PREVIEW SECTION -->
+    <section class="preview">
+        <div class="container">
+            <div class="preview-title" data-reveal>
+                <span>Sneak Peek</span>
+                <h2>Look Inside the Guide</h2>
+                <p>A look at the feminine wellness methods, routines, and practices inside.</p>
+            </div>
+
+            <div style="position: relative; display: inline-block;">
+                <div class="preview-arrow">
+                    <svg width="60" height="60" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 10C30 40 70 40 85 80" stroke="#E5B5B5" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M75 75L85 80L80 70" stroke="#E5B5B5" stroke-width="2"/>
+                    </svg>
+                    <p style="font-size: 0.8rem; margin-top: 5px;">Preview Inside</p>
+                </div>
+                
+                <div class="phone-container" data-reveal>
+                    <div class="phone-screen">
+                        <!-- Cover -->
+                        <div class="ebook-page ebook-cover">
+                            <span class="ebook-tag">Feminine Wellness</span>
+                            <h4>The Natural Feminine Routine That Finally Worked for Me</h4>
+                            <p style="font-size: 0.7rem; font-style: italic;">Inspired by Traditional African Remedies</p>
+                            <p style="margin-top: 2rem; font-size: 0.8rem;">By [Author Name]</p>
+                        </div>
+                        
+                        <!-- Dedication -->
+                        <div class="ebook-page">
+                            <h5 style="font-family: 'Playfair Display'; margin-bottom: 1rem;">Dedication</h5>
+                            <p style="font-size: 0.8rem; line-height: 1.6;">This guide is dedicated to every woman who has silently struggled with recurring feminine discomfort, irritation, itching, or frustration.</p>
+                            <p style="font-size: 0.8rem; line-height: 1.6; margin-top: 10px;">For generations, African women have quietly shared natural wellness practices that supported feminine balance long before modern products became common. This is a collection of those lessons.</p>
+                        </div>
+
+                        <!-- TOC -->
+                        <div class="ebook-page ebook-toc">
+                            <h5>Table of Contents</h5>
+                            <ul>
+                                <li><span>Intro: My Personal Journey</span> <span>04</span></li>
+                                <li><span>Ch 1: Why It Keeps Coming Back</span> <span>09</span></li>
+                                <li><span>Ch 2: Traditional African Wisdom</span> <span>15</span></li>
+                                <li><span>Ch 3: Foods & Herbs for Balance</span> <span>22</span></li>
+                                <li><span>Ch 4: Habits That Worsen Symptoms</span> <span>30</span></li>
+                                <li><span>Ch 5: The Hygiene Routine</span> <span>38</span></li>
+                                <li><span>Ch 6: Stress & Sugar Imbalance</span> <span>45</span></li>
+                            </ul>
+                        </div>
+
+                        <!-- Chapter 1 -->
+                        <div class="ebook-page ebook-chapter">
+                            <h5>Chapter 1</h5>
+                            <h6>Why Yeast Infections Keep Coming Back</h6>
+                            <p>For a long time, I believed yeast infections were just something women occasionally experience and quickly treat. But after dealing with recurring itching and frustration, I realized there were deeper lifestyle patterns.</p>
+                            <p>I started paying attention to my diet, stress levels, hygiene products, and even some traditional habits older women recommended...</p>
+                            <ul>
+                                <li>Common triggers overlooked</li>
+                                <li>Why symptoms often return</li>
+                                <li>The stress-food connection</li>
+                            </ul>
+                        </div>
+
+                        <div class="fade-overlay">
+                            <p class="fade-text">Continue Reading Inside...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div data-reveal>
+                <a href="#purchase" class="btn">Get Instant Access</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHAT'S INSIDE SECTION -->
+    <section class="inside">
+        <div class="container">
+            <h2 style="text-align: center; font-size: 2.5rem;" data-reveal>What You’ll Learn Inside</h2>
+            <div class="grid-cards">
+                <div class="card" data-reveal>
+                    <span class="card-icon">✓</span>
+                    <p>Daily habits that may secretly worsen your symptoms.</p>
+                </div>
+                <div class="card" data-reveal>
+                    <span class="card-icon">✓</span>
+                    <p>Traditional African wellness practices passed down for generations.</p>
+                </div>
+                <div class="card" data-reveal>
+                    <span class="card-icon">✓</span>
+                    <p>Specific foods and drinks that support natural feminine balance.</p>
+                </div>
+                <div class="card" data-reveal>
+                    <span class="card-icon">✓</span>
+                    <p>A simple hygiene routine that genuinely helped me feel better.</p>
+                </div>
+                <div class="card" data-reveal>
+                    <span class="card-icon">✓</span>
+                    <p>The connection between stress, sugar, and feminine discomfort.</p>
+                </div>
+                <div class="card" data-reveal>
+                    <span class="card-icon">✓</span>
+                    <p>Practical lifestyle adjustments you can realistically follow.</p>
+                </div>
+            </div>
+            <p style="text-align: center; margin-top: 3rem; color: var(--text-light); font-style: italic;" data-reveal>
+                Created from real personal experience, practical wellness habits, and intentional feminine self-care.
+            </p>
+        </div>
+    </section>
+
+    <!-- TRUST / ASSURANCE SECTION -->
+    <section class="trust">
+        <div class="container">
+            <h2 style="font-size: 2.2rem;" data-reveal>A Gentle, Practical & Realistic Approach</h2>
+            <div class="trust-grid">
+                <div class="trust-block" data-reveal>
+                    <h4>No unrealistic promises</h4>
+                    <p>Focused on genuine wellness habits and daily self-care routines that support your body.</p>
+                </div>
+                <div class="trust-block" data-reveal>
+                    <h4>Rooted in tradition</h4>
+                    <p>Combines generations of African wisdom with modern hygiene and nutritional practices.</p>
+                </div>
+                <div class="trust-block" data-reveal>
+                    <h4>Real personal proof</h4>
+                    <p>Built from a real journey of finding relief after years of recurring frustration.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA SECTION -->
+    <section class="cta-final" id="purchase">
+        <div class="container" data-reveal>
+            <h2>Start Your Feminine Wellness Journey Today</h2>
+            <p>Discover the routines, wellness practices, and traditional methods that genuinely helped me feel balanced, comfortable, and confident again.</p>
+            <a href="#" class="btn">Download the Full Guide</a>
+            <span class="trust-text">Instant digital access • Secure checkout</span>
+        </div>
+    </section>
+
+    <script>
+        // Simple Scroll Reveal Logic
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('[data-reveal]').forEach((el) => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
